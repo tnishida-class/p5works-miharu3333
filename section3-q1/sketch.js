@@ -4,7 +4,7 @@
 function setup(){
   createCanvas(400, 400);
   background(255);
-  balloon("I love keyakizaka46");
+  balloon("I love keyakizaka46", 30, 30);
 }
 
 
@@ -13,21 +13,19 @@ function balloon(t, x, y){
   let w = textWidth(t);
   let h = textAscent() + textDescent();
   let p = 50;
-  let a = 10;
 
   fill(94, 185, 84);
-  rect(a, a, w + p * 2, h + p * 2);
+  rect(x, y, w + p * 2, h + p * 2);
 
   fill(255);
   textSize(18);
   textFont("serif");
-  text(t, p * 0.5 + a, h + p + a * 0.5);
-
+  text(t, p * 0.5 + x, h + p + y * 0.5);
 
 
   fill(94, 185, 84);
-  triangle((w + p * 2) * 0.6, h + p * 2 + a,
-   (w + p * 2) * 0.9, h + p * 2 + a,
-   (w + p * 2) * 1, (h + p * 2 + a) * 1.3);
+  triangle((w + p * 2) * 0.6, h + p * 2 + y,
+   (w + p * 2) * 0.9, h + p * 2 + y,
+   (w + p * 2) * 1, (h + p * 2 + y) * 1.3);
 
 }
